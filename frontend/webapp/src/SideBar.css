@@ -1,0 +1,41 @@
+.main{
+    background-color: #262626;
+    height: 100vh;
+    width:17%
+}
+.logo{
+    text-align: center;
+    background-color: #262626;
+
+}
+.tabs{
+    margin-top: 15px;
+    padding-left: 10px;
+    display: flex;
+    flex-direction: column;
+    background-color: #262626;
+}
+.tabss{
+    padding: 5px;
+    margin-top: 8px;
+    display: flex;
+    flex-direction: row;
+    background-color: #262626;
+}
+.tabs a{
+    font-size: 25px;
+    background-color: #262626;
+    color: white;
+}
+.icons{
+    color: #af1b1b;
+    background-color: #262626;
+}
+/* .tabss a:hover{
+    background-color: #1f1e1e;
+    cursor:default;
+} */
+.tabs :hover{
+    background-color: #1f1e1e;
+    cursor:default;
+}

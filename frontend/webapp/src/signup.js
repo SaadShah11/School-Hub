@@ -1,14 +1,15 @@
 import React from 'react';
 import Button from '@material-ui/core/Button';
-import {TextField, InputBase} from '@material-ui/core'; 
+import {InputBase} from '@material-ui/core'; 
 import Logo from "./SchoolHubLogo.png";
 import {Link} from 'react-router-dom';
 import Typography from '@material-ui/core/Typography';
-import {makeStyles, withStyles} from '@material-ui/core/styles'; 
+import {makeStyles} from '@material-ui/core/styles'; 
 
 
 const  useStyles = makeStyles(theme =>({
     inputField:{
+        backgroundColor:'#262626',
         borderBottom: "2px solid red",
         marginBottom:"20px",
         
@@ -21,14 +22,14 @@ export default function SignUp() {
     const classes=useStyles();
   return (
     <div style={{backgroundColor:'#262626', height:"768px ",color:'white',display: "flex", justifyContent: "space-evenly",alignItems: "center"}}>
-        <div style={{width:"600px",display:'flex', flexDirection:'column', justifyItems:'center', justifyContent:'center'}}>
-            <img src={Logo} height="200px" width='190px'/>
-            <text style={{fontWeight:'bold', fontSize:'30px'}}>Welcome to SCHOOLHUB</text>
-            <text>aioduqioweuioeuqwi jeirjweif ioehwui uiehwui wuirfhewui uiweb uiwef weui ewr ioe uiewf  weu weoe</text> 
+        <div style={{backgroundColor:'#262626',width:"600px",display:'flex', flexDirection:'column', justifyItems:'center', justifyContent:'center'}}>
+            <img src={Logo} height="200px" width='190px' style={{backgroundColor:'#262626',}}/>
+            <text style={{backgroundColor:'#262626',fontWeight:'bold', fontSize:'30px'}}>Welcome to SCHOOLHUB</text>
+            <text style={{backgroundColor:'#262626',}}>aioduqioweuioeuqwi jeirjweif ioehwui uiehwui wuirfhewui uiweb uiwef weui ewr ioe uiewf  weu weoe</text> 
         </div>
         <form style={{ width:"400px",textAlign:'center'}}>
-        <div >
-            <Typography variant="h5" style={{color:'white',fontWeight:'bold', fontSize:'40px' }}>
+        <div style={{backgroundColor:'#262626',}}>
+            <Typography variant="h5" style={{backgroundColor:'#262626',color:'white',fontWeight:'bold', fontSize:'40px' }}>
             SIGN UP
             </Typography>
             <InputBase
@@ -76,18 +77,15 @@ export default function SignUp() {
                 autoComplete="current-password"
                 className={classes.inputField}
             />
+            <div style={{width:'100%',backgroundColor: '#af1b1b', fontSize:'20px', padding:"5px", borderRadius:"7px", cursor:'pointer'}}>
+                <text style={{backgroundColor: '#af1b1b', fontSize:'20px', padding:"5px", borderRadius:"7px", cursor:'pointer'}}
+                >
+                    Sign UP
+                </text> 
+            </div>
+            
 
-            <Button
-                style={{ marginBottom:"20px"}}
-                type="submit"
-                fullWidth
-                variant="contained"
-                color="white"
-            >
-                Sign UP
-            </Button>
-
-            <Link to="/signin" style={{color:'white'}}>
+            <Link to="/signin" style={{ backgroundColor:'#262626',color:'white'}}>
                 {"Already have an account? Sign In"}
             </Link>
                 
