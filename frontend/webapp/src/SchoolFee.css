@@ -1,0 +1,14 @@
+*{
+    background-color: black;
+}
+.main{
+    justify-content: center;
+    
+}
+.table{
+    color: white;
+    background-color: #262626;
+    width: 80%;
+    margin: 50px;  
+    font-size: 25px;
+}

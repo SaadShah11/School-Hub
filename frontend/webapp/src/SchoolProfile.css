@@ -1,0 +1,40 @@
+*{
+    
+}
+.intro{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width:100%;
+    margin-bottom: 15px;
+}
+.texts{
+    width:40%;
+}
+.video{
+    padding-left: 0px;
+    width: 41.9%;
+    border: 10px solid black;
+}
+.map{
+    background-color: black;
+    justify-content: center;
+    width: 50%;
+}
+.footer{
+padding-top: 380px;
+}
+@media(max-width:900px){
+    .intro{
+        display: flex;
+        flex-direction: column;
+    }
+    .texts{
+        width: 100%;
+        padding:10px;
+    }
+    .video{
+        padding-left: 0px;
+        width:100%
+    }
+}

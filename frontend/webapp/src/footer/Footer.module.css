@@ -1,0 +1,153 @@
+.rootCont {
+    background-color:#262626;
+    margin-top:10%;
+    height: fit-content;
+    padding-bottom: 40px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.div1 {
+    background-color: #262626;
+    width: 25%;
+}
+
+.div2 {
+    background-color: #262626;
+    width: 20%;
+}
+
+.div4 {
+    background-color: #262626;
+    width: 25%;
+    text-align: center;
+}
+
+.abtHead{
+    background-color: #262626;
+    color: white;
+    font-family: "Josefin Sans", Arial, sans-serif;
+    font-size: 25px;
+    margin-top: 40px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.abtHead2{
+    background-color: #262626;
+    color: white;
+    font-family: "Josefin Sans", Arial, sans-serif;
+    font-size: 25px;
+    margin-top: 40px;
+    text-align: start;
+    margin-bottom: 30px;
+}
+
+.abtText{
+    color: white;
+    background-color: #262626;
+    font-family: "Poppins", Arial, sans-serif;
+    font-size: 18px;
+    margin-bottom: 30px;
+    text-align: justify;
+    font-weight: 300;
+    padding:0px 15px 0px 15px;
+}
+/* .abtText:hover{
+    color:orange;
+} */
+
+.accCont{
+    background-color: #262626;
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+    justify-content: space-between      ;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.accIcon{
+    background-color: #262626;
+    height: 40px;
+    width:40px;
+}
+
+.linksCont{
+    background-color: #262626;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.links{
+    background-color: #262626;
+    text-decoration: none;
+    color: white;
+    font-size:20px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+ 
+.links:hover{
+    color: rgb(155, 13, 13);
+    cursor: pointer; 
+    transition: all 400ms ease;
+} 
+
+.contactLink{
+    background-color: #262626;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 0px;
+    width: 100%;
+}
+
+.contactIcon{
+    background-color: #262626;
+    height: 30px;
+    width: 30px;
+}
+
+.contactText{
+    background-color: #262626;
+    color: white ;
+    font: 16px "Poppins", sans-serif;
+    font-weight: 400;
+    margin-left: 10px;
+    overflow: auto;
+}
+.logo{
+    background-color: #262626;
+    width: 300px;
+    height: 100px;
+    padding-top: 35px;
+    padding-left: 10px;
+}
+@media(max-width:900px){
+    .abtHead{
+        font-size: 20px;
+    }
+    .contactText{
+        font-size: 13px;
+    }
+    .links{
+        font-size: 18px;
+    }
+    .abtText{
+        font-size: 13px;
+    }
+}
+
+@media(max-width:550px){
+    .rootCont{
+        flex-direction: column;
+        align-items: center;
+    }
+    .div1,.div2,.div4{
+        width: 80%;
+    }
+}
