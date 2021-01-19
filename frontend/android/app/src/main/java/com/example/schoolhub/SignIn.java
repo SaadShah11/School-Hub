@@ -25,7 +25,7 @@ public class SignIn extends AppCompatActivity {
     FirebaseDatabase database;
     DatabaseReference users;
     EditText password,email;
-    TextView sup, user;
+    TextView sup;
     Button lin;
     FirebaseAuth mAuth;
     Boolean emailChk;
@@ -41,8 +41,7 @@ public class SignIn extends AppCompatActivity {
         email = (EditText) findViewById(R.id.email);
         password = (EditText) findViewById(R.id.password);
         sup = (TextView) findViewById(R.id.s_up);
-        user = (TextView) findViewById(R.id.signInAs);
-        user.setText("Signing In as "+UserSignIn.User);
+
         sup.setOnClickListener(new View.OnClickListener()
         {
             @Override

@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent= new Intent(getApplicationContext(), UserSignIn.class);
+                Intent intent= new Intent(getApplicationContext(), SignIn.class);
                 startActivity(intent);
             }
         }, 2000);//timer set for 2 seconds
