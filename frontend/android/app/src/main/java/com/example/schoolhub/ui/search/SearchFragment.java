@@ -60,8 +60,7 @@ public class SearchFragment extends Fragment implements OnMapReadyCallback {
 
         return root;
     }
-
-
+    
     @Override
     public void onMapReady(GoogleMap googleMap) {
 //        googleMap.addMarker(new MarkerOptions().position(new LatLng(33.6376464, 73.1467503)).title("Current Location"));

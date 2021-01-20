@@ -1,7 +1,7 @@
 const MongoClient = require('mongodb').MongoClient;
 
 const url =
-  'mongodb+srv://saad:saad@schoolhub.zmtqr.mongodb.net/userCollection?retryWrites=true&w=majority';
+  'mongodb+srv://saad:saad@schoolhub.zmtqr.mongodb.net/userss?retryWrites=true&w=majority';
 
 const createUser = async (req, res, next) => {
   const newProduct = {
@@ -36,7 +36,7 @@ const getUser = async (req, res, next) => {
     const db = client.db();
     products = await db.collection('users').find().toArray();
   } catch (error) {
-    return res.json({message: 'Could not retrieve products.'});
+    return res.json({message: 'Could not find user.'});
   };
   client.close();
 
