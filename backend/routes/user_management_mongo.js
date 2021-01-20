@@ -1,4 +1,53 @@
+const MongoClient = require('mongodb').MongoClient;
 
+const url =
+  'mongodb+srv://saad:saad@schoolhub.zmtqr.mongodb.net/userCollection?retryWrites=true&w=majority';
+
+const createUser = async (req, res, next) => {
+  const newProduct = {
+    type: req.body.type,
+    email: req.body.email,
+    username: req.body.username,
+    phoneNumber: req.body.phoneNumber,
+    password: req.body.password
+  };
+  const client = new MongoClient(url);
+
+  try {
+    await client.connect();
+    const db = client.db();
+    const result = db.collection('users').insertOne(newProduct);
+  } catch (error) {
+    return res.json({message: 'Could not store data.'});
+  };
+  client.close();
+
+  res.json(newProduct);
+  
+};
+
+const getUser = async (req, res, next) => {
+  const client = new MongoClient(url);
+
+  let products;
+
+  try {
+    await client.connect();
+    const db = client.db();
+    products = await db.collection('users').find().toArray();
+  } catch (error) {
+    return res.json({message: 'Could not retrieve products.'});
+  };
+  client.close();
+
+  res.json(products);
+};
+
+exports.createUser = createUser;
+exports.getUser = getUser;
+
+
+/*
 const MongoClient = require('mongodb').MongoClient;
 
 const url = 'mongodb+srv://saad:saad@schoolhub.zmtqr.mongodb.net/users?retryWrites=true&w=majority';
@@ -67,3 +116,4 @@ const loginUser = async (req, res, next) => {
 exports.createUser = createUser;
 exports.getUser = getUser;
 exports.loginUser = loginUser;
+*/
