@@ -7,8 +7,8 @@ const userManagementRoutes = require('./routes/user_management.js')
 
 const app = express();
 
-app.use(parser.urlencoded({extended:false})) //This statement parses the form data and automatically uses next
-
+//app.use(parser.urlencoded({extended:true})) //This statement parses the form data and automatically uses next
+app.use(parser.json())
 /*
 app.use('/',(req, res, next) => {
     //This middleware always runs

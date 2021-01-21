@@ -1,7 +1,7 @@
 const MongoClient = require('mongodb').MongoClient;
 
 const url =
-  'mongodb+srv://saad:saad@schoolhub.zmtqr.mongodb.net/userss?retryWrites=true&w=majority';
+  'mongodb+srv://saad:saad@schoolhub.zmtqr.mongodb.net/users?retryWrites=true&w=majority';
 
 const createUser = async (req, res, next) => {
   const newProduct = {
