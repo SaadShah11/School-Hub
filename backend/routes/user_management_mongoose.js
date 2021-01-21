@@ -17,7 +17,7 @@ const createUser = async (req, res, next) => {
         type: req.body.type,
         email: req.body.email,
         username: req.body.username,
-        sex: req.body.sex,
+        phoneNumber: req.body.phoneNumber,
         password: req.body.password
     })
 
@@ -46,9 +46,7 @@ const userLogin = async (req, res, next) => {
         const error = new HttpError('Wrong credentials', 401)
         return next(error)
     }
-
-
-
+    console.log('Login Successful')
     res.json({message:"login successful"})
 } 
 

@@ -9,6 +9,16 @@ const app = express();
 
 //app.use(parser.urlencoded({extended:true})) //This statement parses the form data and automatically uses next
 app.use(parser.json())
+app.use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader(
+        'Access-Control-Allow-Methods',
+        'OPTIONS, GET, POST, PUT, PATCH, DELETE'
+    );
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+    next();
+});
+
 /*
 app.use('/',(req, res, next) => {
     //This middleware always runs
@@ -54,4 +64,4 @@ app.use('/',(req, res, next) => {
 })
 */
 
-app.listen(3000)
+app.listen(8080)
