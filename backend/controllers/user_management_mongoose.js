@@ -6,11 +6,11 @@ const HttpError = require('../models/http-error');
 
 mongoose.connect(
     'mongodb+srv://saad:saad@schoolhub.zmtqr.mongodb.net/users?retryWrites=true&w=majority'
-    ).then(() => {
-        console.log("DB connected")
-    }).catch(() => {
-        console.log('Error occured, DB connection failed ')
-    })
+).then(() => {
+    console.log("DB connected")
+}).catch(() => {
+    console.log('Error occured, DB connection failed ')
+})
 
 const createUser = async (req, res, next) => {
     const createdUser = new Users({
@@ -21,8 +21,28 @@ const createUser = async (req, res, next) => {
         password: req.body.password
     })
 
+    let existingUser;
+    try {
+        existingUser = await User.findOne({ email: email });
+    } catch (err) {
+        const error = new HttpError(
+            'Signing up failed, please try again later.',
+            500
+        );
+        return next(error);
+    }
+
+    if (existingUser) {
+        const error = new HttpError(
+            'User exists already, please login instead.',
+            422
+        );
+        return next(error);
+    }
+
     const result = await createdUser.save();
     console.log(typeof createdUser._id)
+    res.status(200)
     res.json(result)
 };
 
@@ -32,23 +52,23 @@ const getUser = async (req, res, next) => {
 }
 
 const userLogin = async (req, res, next) => {
-    const {email, password} = req.body;
+    const { email, password } = req.body;
 
     let existingUser;
-    try{
-        existingUser = await Users.findOne({email: email})
-    } catch(err){
+    try {
+        existingUser = await Users.findOne({ email: email })
+    } catch (err) {
         const error = new HttpError('Email error occured', 500);
         return next(error)
     }
 
-    if(!existingUser || existingUser.password !== password){
+    if (!existingUser || existingUser.password !== password) {
         const error = new HttpError('Wrong credentials', 401)
         return next(error)
     }
     console.log('Login Successful')
-    res.json({message:"login successful"})
-} 
+    res.json({ message: "login successful" })
+}
 
 exports.createUser = createUser;
 exports.getUser = getUser;
