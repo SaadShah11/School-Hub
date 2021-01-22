@@ -1,6 +1,6 @@
 
 const express = require('express');
-const userManagement = require('./user_management_mongoose.js')
+const userManagement = require('../mongoDB/user_management_mongoose.js')
 
 const router = express.Router();
 //const app = express();

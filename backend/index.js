@@ -3,6 +3,8 @@ const express = require('express')
 const parser = require('body-parser')
 
 const userManagementRoutes = require('./routes/user_management.js')
+const dashboardRoutes = require('./routes/dashboard.js')
+
 //const shopRoutes = require('./routes/shop.js')
 
 const app = express();
@@ -46,6 +48,8 @@ app.post('/product',(req,res,next)=>{
 
 //app.use(adminRoutes);
 app.use('/user_management', userManagementRoutes)
+
+app.use('/dashboard', dashboardRoutes)
 //When all middlewares start with same routes then we do this, only the routes starting
 //with the admin will enter this method
 //We can aslo use same routes/paths for 2 different middlewares if one is get and other is post
