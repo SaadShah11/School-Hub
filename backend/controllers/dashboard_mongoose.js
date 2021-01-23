@@ -37,7 +37,7 @@ exports.createPost = createPost;
 exports.getPosts = getPosts;
 
 /*
-
+Sample Data
 {
     "type":"image",
     "userID": 879,

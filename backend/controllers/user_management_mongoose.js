@@ -23,7 +23,7 @@ const createUser = async (req, res, next) => {
 
     let existingUser;
     try {
-        existingUser = await User.findOne({ email: email });
+        existingUser = await Users.findOne({ email: email });
     } catch (err) {
         const error = new HttpError(
             'Signing up failed, please try again later.',
@@ -59,15 +59,18 @@ const userLogin = async (req, res, next) => {
         existingUser = await Users.findOne({ email: email })
     } catch (err) {
         const error = new HttpError('Email error occured', 500);
+        res.status(500).send()
         return next(error)
     }
 
     if (!existingUser || existingUser.password !== password) {
         const error = new HttpError('Wrong credentials', 401)
+        res.status(401).send()
         return next(error)
     }
     console.log('Login Successful')
-    res.json({ message: "login successful" })
+    //res.json({ message: "login successful" })
+    res.status(200).send(JSON.stringify({_id:existingUser}));
 }
 
 exports.createUser = createUser;
